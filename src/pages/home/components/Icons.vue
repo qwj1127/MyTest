@@ -35,17 +35,18 @@ export default{
       return pages
     }
   }
-
 }
 </script>
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
+  @import '~styles/mixins.styl'
   .icons
     overflow: hidden
     width: 100%
     height: 0
     padding-bottom: 50%
+    margin-top: .1rem
     .icon
       position: relative
       overflow: hidden
