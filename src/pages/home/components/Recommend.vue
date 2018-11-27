@@ -46,8 +46,7 @@ export default{
       height: 1.7rem
       padding: .1rem
     .rec-info
-      margin-top: .2rem
-      margin-left: .1rem
+      padding: .1rem
       min-width: 0
       .rec-title
         line-height: .54rem
