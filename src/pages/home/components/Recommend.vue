@@ -2,7 +2,7 @@
   <div class="recommend">
     <div class="title">热销推荐</div>
     <ul>
-      <li v-for="item of recommendList"
+      <li v-for="item of this.recommendList"
           :key="item.id"
           class="rec-content border-bottom"
       >
@@ -20,9 +20,9 @@
 <script>
 export default{
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{'id': '0001', 'imgUrl': 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg', 'title': '上海迪士尼乐园', 'desc': '今年夏天，开启你奇妙神奇的童话之旅'}, {'id': '0002', 'imgUrl': 'http://img1.qunarzz.com/sight/p0/1412/9f/fbff2a5302c0ce906ef9b64159730f89.water.jpg_200x200_87806940.jpg', 'title': '上海海洋水族馆', 'desc': '穿越世界，来一次终生难忘的海洋之旅'}, {'id': '0003', 'imgUrl': 'http://img1.qunarzz.com/sight/p0/1512/b5/b5be74400df235aa90.water.jpg_200x200_192ddb7f.jpg', 'title': '环球金融中心观光厅', 'desc': '来上海登三高，眺望魔都霓虹闪烁'}, {'id': '0004', 'imgUrl': 'http://img1.qunarzz.com/sight/p0/1505/a1/a1950d296c2d10ca.water.jpg_200x200_86b5ff02.jpg', 'title': '碧海金沙水上乐园', 'desc': '阳光、海水、沙滩，今年夏天我们约吗'}, {'id': '0005', 'imgUrl': 'http://img1.qunarzz.com/sight/p0/1603/b3/b3d33bcf9771d81090.water.jpg_200x200_a48a7066.jpg', 'title': '上海乐高探索中心', 'desc': '难忘刺激的乐高工厂之旅'}]
+  props: {
+    recommendList: {
+      type: Array
     }
   }
 }
