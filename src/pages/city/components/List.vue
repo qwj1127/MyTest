@@ -21,7 +21,8 @@
       </div>
       <div class="area"
             v-for="(objValue,objKey) of cities"
-            :key="objKey">
+            :key="objKey"
+            :ref="objKey">
         <div class="title border-topbottom">{{objKey}}</div>
         <ul class="item-list">
           <li class="item border-bottom"
@@ -39,10 +40,20 @@ export default{
   name: 'CityList',
   props: {
     cities: Object,
-    hotCities: Array
+    hotCities: Array,
+    letter: String
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter (newValue, oldValue) {
+      if (this.letter) {
+        // vm.$refs是一个对象，持有所有已注册过ref的子元素或子组件
+        // console.log(this.$refs[this.letter][0])
+        this.scroll.scrollToElement(this.$refs[this.letter][0])
+      }
+    }
   }
 }
 </script>
