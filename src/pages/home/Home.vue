@@ -15,6 +15,7 @@ import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
+
 export default{
   name: 'Home',
   components: {
@@ -26,6 +27,7 @@ export default{
   },
   data () {
     return {
+      lastShowCity: '', // 临时缓存变量，用于保存之前城市是什么
       swiperList: [],
       iconList: [],
       recommendList: [],
@@ -33,11 +35,20 @@ export default{
     }
   },
   mounted () {
+    console.log('mounted')
+    this.lastShowCity = this.$store.state.city
     this.getHomeInfo()
+  },
+  activated () {
+    console.log('activated')
+    if (this.lastShowCity !== this.$store.state.city) {
+      this.lastShowCity = this.$store.state.city
+      this.getHomeInfo()
+    }
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json')
+      axios.get('/api/index.json?city=' + this.$store.state.city)
         .then((res) => {
           res = res.data
           if (res && res.data) {

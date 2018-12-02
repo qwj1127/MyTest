@@ -40,7 +40,7 @@ export default new Vuex.Store({
   /* 拆到state.js中去 end */
 
   /* getters的作用：
-  当需要根据state里的数据，算出一些新的数据的时候，我们就可以借助getters来提供新的数据，
+  类似于vue中computed计算属性的作用，当需要根据state里的数据，算出一些新的数据的时候，我们就可以借助getters来提供新的数据，
   这样可以避免数据的冗余
   */
   getters: {
