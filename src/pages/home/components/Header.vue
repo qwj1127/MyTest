@@ -7,10 +7,11 @@
        <span class="iconfont back-search">&#xe632;</span>
         输入城市景点游玩主题
     </div>
-    <router-link to="/city">
-      <div class="header-right">{{this.$store.state.city}}
-        <span class="iconfont arrow-icon">&#xe64a;</span>
-      </div>
+    <router-link tag="div"
+                 class="header-right"
+                 to="/city">
+      {{this.$store.state.city}}
+      <span class="iconfont arrow-icon">&#xe64a;</span>
     </router-link>
   </div>
 </template>
@@ -50,7 +51,6 @@ export default{
       min-width: 1.04rem
       padding: 0 .1rem
       text-align: center
-      color: #fff
       .arrow-icon
         margin-left: -.04rem
         font-size: .24rem

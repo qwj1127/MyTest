@@ -2,9 +2,12 @@
   <div class="recommend">
     <div class="title">热销推荐</div>
     <ul>
-      <li v-for="item of this.recommendList"
-          :key="item.id"
-          class="rec-content border-bottom"
+      <!--to前加冒号，动态绑定路由地址-->
+      <router-link tag="li"
+                   :to="'/detail/' + item.id"
+                   v-for="item of this.recommendList"
+                   :key="item.id"
+                   class="rec-content border-bottom"
       >
         <img class="rec-img" :src="item.imgUrl" />
         <div class="rec-info">
@@ -12,7 +15,7 @@
           <p class="rec-desc">{{item.desc}}</p>
           <button class="rec-button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
