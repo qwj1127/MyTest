@@ -36,9 +36,14 @@ export default{
   },
   // 当页面重新被显示的时候，activated会被重新执行
   activated () {
-    // addEventListener() 用于向指定元素添加(绑定)事件
+    // element.addEventListener() 用于向指定元素添加(绑定)事件
     // 给“滚动scroll”这个动作绑定一个handleScroll事件
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // 页面即将被替换成其他页面的时候，deactivated会被执行
+  deactivated () {
+    // 为全局事件scroll解绑
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll () {
