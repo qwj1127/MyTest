@@ -50,7 +50,7 @@ export default {
     display: flex
     flex-direction: column
     justify-content: center
-    position: absolute
+    position: fixed
     top: 0
     left: 0
     right: 0

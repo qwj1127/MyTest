@@ -1,11 +1,5 @@
 <template>
 <div>
-  <router-link
-    tag="div"
-    to="/"
-    class="arrow-icon-wrapper">
-    <div class="iconfont arrow-icon">&#xe624;</div>
-  </router-link>
   <div class="banner-wrapper" @click="handleBannerClick">
     <img class="banner-img" src='//img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg' />
     <div class="banner-info">
@@ -50,26 +44,11 @@ export default{
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
-  .arrow-icon-wrapper
-    width: .9rem
-    height: .9rem
-    position: absolute
-    top: .3rem
-    left: .3rem
-    border-radius: .6rem
-    z-index: 1
-    background: rgba(0, 0, 0, .8)
-    .arrow-icon
-      text-align: center
-      margin-top: .22rem
-      font-size: .44rem
-      color: #fff
   .banner-wrapper
     position: relative
     overflow: hidden
     height: 0
     padding-bottom: 55%
-    background: green
     .banner-img
       width: 100%
     .banner-info
