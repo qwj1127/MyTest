@@ -55,7 +55,7 @@ export default{
       } else {
         this.showAbs = true
       }
-      console.log(document.documentElement.scrollTop)
+    // console.log(document.documentElement.scrollTop)
     }
   },
   computed: {
@@ -86,6 +86,7 @@ export default{
     top: 0
     left: 0
     right: 0
+    z-index: 1
     height: $headerHeight
     line-height: $headerHeight
     color: #fff
