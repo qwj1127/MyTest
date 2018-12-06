@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="item"
-       v-for="(item, index) of Clist"
+       v-for="(item, index) of categoryList"
        :key="index"
   >
     <div class="item-title" @click="handleClick(item.id)">
@@ -12,7 +12,7 @@
          v-if="item.child"
          v-show="item.expand"
     >
-      <detail-list :list="item.child">
+    <detail-list :categoryList="item.child">
     </detail-list>
     </div>
   </div>
@@ -23,19 +23,14 @@
 export default{
   name: 'DetailList',
   props: {
-    list: Array
-  },
-  data () {
-    return {
-      Clist: this.list
-    }
+    categoryList: Array
   },
   methods: {
     handleClick (id) {
       // 传入点击标题的id
       // console.log(id)
-      // console.log(this.Clist)
-      this.list.forEach((val) => {
+      // console.log(this.categoryList)
+      this.categoryList.forEach((val) => {
         // 循环所有数据，找出所有数据中的id与传入的id匹配的那一项，
         // 将那一项的expand取反，在递归组件中判断v-show="item.expand"即可
         // console.log(val)

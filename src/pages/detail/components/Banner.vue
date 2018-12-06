@@ -1,17 +1,17 @@
 <template>
 <div>
   <div class="banner-wrapper" @click="handleBannerClick">
-    <img class="banner-img" src='//img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg' />
+    <img class="banner-img" :src='bannerImg' />
     <div class="banner-info">
-      <div class="banner-title">上海迪士尼乐园</div>
+      <div class="banner-title">{{sightName}}</div>
       <div class="banner-number">
         <span class="iconfont banner-icon">&#xe692;</span>
-        2
+        {{this.gallaryImgs.length}}
       </div>
     </div>
   </div>
   <common-gallary
-    :imgs="imgs"
+    :imgs="gallaryImgs"
     v-show="showGallary"
     @close="handleGallaryClose"
     ></common-gallary>
@@ -25,9 +25,13 @@ export default{
   components: {
     CommonGallary
   },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
   data () {
     return {
-      imgs: ['http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_r_800x800_d6a63068.jpg', 'http://img1.qunarzz.com/sight/p0/1704/d7/d75e41fc3bf305d8a3.img.jpg_350x240_384ad477.jpg'],
       showGallary: false
     }
   },

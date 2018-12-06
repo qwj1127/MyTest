@@ -2,11 +2,12 @@
   <div class="recommend">
     <div class="title">热销推荐</div>
     <ul>
-      <!--to前加冒号，动态绑定路由地址-->
+      <!--to前加冒号，动态绑定路由地址,根据参数不同，去往不同的页面，
+        item.id就是动态路由参数-->
       <router-link tag="li"
-                   :to="'/detail/' + item.id"
                    v-for="item of this.recommendList"
                    :key="item.id"
+                   :to="{name: 'Detail', params: {id: item.id}}"
                    class="rec-content border-bottom"
       >
         <img class="rec-img" :src="item.imgUrl" />
